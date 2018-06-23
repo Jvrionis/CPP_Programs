@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting triangle.cpp
+triangle.cpp:
+     $Id: triangle.cpp,v 1.9 2014-05-08 19:42:13-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 triangle.cpp
+	-o triangle -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f triangle.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished triangle.cpp

@@ -1,0 +1,1011 @@
+%PDF-1.4
+5 0 obj
+<</Length 6 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(07/07/16)Tj
+-0.659766 -12.8 Td
+(18:13:04)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 518.488 739.2 Tm
+(1)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/3)Tj
+/R12 14 Tf
+-268.412 -2.7 Td
+(childwait.cpp)Tj
+-124.624 18 Td
+($cmps109-wm/Examples/wk08a-sockets/small-examples/)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 70.4 718 Tm
+[(1:)-600(// $Id: childwait.cpp,v 1.2 2014-05-23 12:26:39-07 - - $)]TJ
+12 TL
+(2:)'
+T*[(3:)-600(//)]TJ
+T*[(4:)-600(// A zombie process is one that has exited but for which the)]TJ
+T*[(5:)-600(// parent process has not waited for it.  This process creates)]TJ
+T*[(6:)-600(// up to ten child processes and then waits for them.)]TJ
+T*[(7:)-600(//)]TJ
+T*[(8:)-600(// Usage: childwait children pdelay loops cdelays)]TJ
+T*[(9:)-600(// children - number of children to create)]TJ
+-6.6 -12 Td
+[(10:)-600(// pdelay   - parent delays \(seconds\) before creating each child)]TJ
+T*[(11:)-600(// loops    - number of times each child is to print a message)]TJ
+T*[(12:)-600(// cdelays  - delay \(seconds\) before each child's message)]TJ
+T*[(13:)-600(//)]TJ
+(14:)'
+T*[(15:)-600(#include <cerrno>)]TJ
+T*[(16:)-600(#include <cstring>)]TJ
+T*[(17:)-600(#include <iomanip>)]TJ
+T*[(18:)-600(#include <iostream>)]TJ
+T*[(19:)-600(#include <sstream>)]TJ
+T*[(20:)-600(#include <stdexcept>)]TJ
+T*[(21:)-600(#include <string>)]TJ
+T*[(22:)-600(#include <typeinfo>)]TJ
+T*[(23:)-600(#include <vector>)]TJ
+T*[(24:)-600(using namespace std;)]TJ
+(25:)'
+T*[(26:)-600(#include <libgen.h>)]TJ
+T*[(27:)-600(#include <sys/time.h>)]TJ
+T*[(28:)-600(#include <sys/types.h>)]TJ
+T*[(29:)-600(#include <sys/wait.h>)]TJ
+T*[(30:)-600(#include <time.h>)]TJ
+T*[(31:)-600(#include <unistd.h>)]TJ
+(32:)'
+T*[(33:)-600(#include "../simple-sockets/logstream.h")]TJ
+T*[(34:)-600(logstream outlog \(cout\);)]TJ
+T*[(35:)-600(logstream errlog \(cerr\);)]TJ
+T*[(36:)-600(string progname;)]TJ
+T*[(37:)-600(timeval start_time;)]TJ
+(38:)'
+T*[(39:)-600(string when\(\) {)]TJ
+T*[(40:)-600(   timeval now;)]TJ
+T*[(41:)-600(   gettimeofday \(&now, NULL\);)]TJ
+T*[(42:)-600(   double start = start_time.tv_sec + start_time.tv_usec / 1.0e6;)]TJ
+T*[(43:)-600(   double dnow = now.tv_sec + now.tv_usec / 1.0e6;)]TJ
+T*[(44:)-600(   double delta = dnow - start;)]TJ
+T*[(45:)-600(   stringstream diff;)]TJ
+T*[(46:)-600(   diff << fixed << setw\(8\) << setprecision\(5\) << delta << " "; )]TJ
+T*[(47:)-600(   return diff.str\(\);;)]TJ
+T*[(48:)-600(})]TJ
+(49:)'
+ET
+Q
+Q
+endstream
+endobj
+6 0 obj
+2648
+endobj
+19 0 obj
+<</Length 20 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(07/07/16)Tj
+-0.659766 -12.8 Td
+(18:13:04)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 518.488 739.2 Tm
+(2)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/3)Tj
+/R12 14 Tf
+-268.412 -2.7 Td
+(childwait.cpp)Tj
+-124.624 18 Td
+($cmps109-wm/Examples/wk08a-sockets/small-examples/)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 63.8 718 Tm
+(50:)Tj
+12 TL
+T*[(51:)-600(template <typename Type>)]TJ
+T*[(52:)-600(Type from_string \(const string &str\) { )]TJ
+T*[(53:)-600(   stringstream stream; )]TJ
+T*[(54:)-600(   stream << str; )]TJ
+T*[(55:)-600(   Type result; )]TJ
+T*[(56:)-600(   if \(not \(stream >> result and stream.eof\(\)\)\) {)]TJ
+T*[(57:)-600(      throw domain_error \(string \(typeid \(Type\).name\(\)\))]TJ
+T*[(58:)-600(            + " from_string \(" + str + "\)"\); )]TJ
+T*[(59:)-600(   })]TJ
+T*[(60:)-600(   return result; )]TJ
+T*[(61:)-600(})]TJ
+(62:)'
+T*[(63:)-600(void usage\(\) {)]TJ
+T*[(64:)-600(   cerr << "Usage: " << progname << " children pdelay loops cdelays")]TJ
+T*[(65:)-600(        << endl;)]TJ
+T*[(66:)-600(   exit \(EXIT_FAILURE\);)]TJ
+T*[(67:)-600(})]TJ
+(68:)'
+T*[(69:)-600(void error \(const string& obj\) {)]TJ
+T*[(70:)-600(   errlog << obj << ": " << string \(strerror \(errno\)\) << endl;)]TJ
+T*[(71:)-600(   exit \(EXIT_FAILURE\);)]TJ
+T*[(72:)-600(})]TJ
+(73:)'
+T*[(74:)-600(struct options {)]TJ
+T*[(75:)-600(   size_t children {};)]TJ
+T*[(76:)-600(   size_t pdelay {};)]TJ
+T*[(77:)-600(   size_t loops {};)]TJ
+T*[(78:)-600(   size_t cdelays {};)]TJ
+T*[(79:)-600(   options \(const vector<string> opts\) {)]TJ
+T*[(80:)-600(      if \(opts.size\(\) != 4\) usage\(\);)]TJ
+T*[(81:)-600(      try {)]TJ
+T*[(82:)-600(         children = from_string<size_t> \(opts[0]\);)]TJ
+T*[(83:)-600(         pdelay = from_string<size_t> \(opts[1]\);)]TJ
+T*[(84:)-600(         loops = from_string<size_t> \(opts[2]\);)]TJ
+T*[(85:)-600(         cdelays = from_string<size_t> \(opts[3]\);)]TJ
+T*[(86:)-600(      }catch \(domain_error& error\) {)]TJ
+T*[(87:)-600(         cerr << progname << ": " << error.what\(\) << endl;)]TJ
+T*[(88:)-600(         usage\(\);)]TJ
+T*[(89:)-600(      })]TJ
+T*[(90:)-600(   })]TJ
+T*[(91:)-600(};)]TJ
+(92:)'
+ET
+Q
+Q
+endstream
+endobj
+20 0 obj
+2374
+endobj
+24 0 obj
+<</Length 25 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(07/07/16)Tj
+-0.659766 -12.8 Td
+(18:13:04)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 518.488 739.2 Tm
+(3)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/3)Tj
+/R12 14 Tf
+-268.412 -2.7 Td
+(childwait.cpp)Tj
+-124.624 18 Td
+($cmps109-wm/Examples/wk08a-sockets/small-examples/)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 63.8 718 Tm
+(93:)Tj
+12 TL
+T*[(94:)-600(pid_t wait_children\(\) {)]TJ
+T*[(95:)-600(   for \(;;\) {)]TJ
+T*[(96:)-600(      int status;)]TJ
+T*[(97:)-600(      pid_t child_pid = waitpid \(-1, &status, WNOHANG\);)]TJ
+T*[(98:)-600(      if \(child_pid <= 0\) return child_pid;)]TJ
+T*[(99:)-600(      outlog << when\(\) << "Child pid " << child_pid)]TJ
+-6.6 -12 Td
+[(100:)-600(             << " status " << \(status >> 8\))]TJ
+T*[(101:)-600(             << " signal " << \(status & 0x7F\))]TJ
+T*[(102:)-600(             << " core " << \(status >> 7 & 1\) << endl;)]TJ
+T*[(103:)-600(   })]TJ
+T*[(104:)-600(})]TJ
+(105:)'
+T*[(106:)-600(int run_child \(size_t id, size_t loops, size_t cdelays\) {)]TJ
+T*[(107:)-600(   outlog << when\(\) << "Child " << id << " starting." << endl;)]TJ
+T*[(108:)-600(   for \(size_t loop = 0; loop < loops; ++loop\) {)]TJ
+T*[(109:)-600(      sleep \(cdelays\);)]TJ
+T*[(110:)-600(      outlog << when\(\) << "Child " << id << " message " << loop)]TJ
+T*[(111:)-600(             << "." << endl;)]TJ
+T*[(112:)-600(   })]TJ
+T*[(113:)-600(   outlog << when\(\) << "Child " << id << " finished." << endl;)]TJ
+T*[(114:)-600(   exit \(id\);)]TJ
+T*[(115:)-600(   // Must not return to main function.)]TJ
+T*[(116:)-600(})]TJ
+(117:)'
+T*[(118:)-600(int main \(int argc, char** argv\) {)]TJ
+T*[(119:)-600(   progname = basename \(argv[0]\);)]TJ
+T*[(120:)-600(   outlog.set_execname \(progname\);)]TJ
+T*[(121:)-600(   errlog.set_execname \(progname\);)]TJ
+T*[(122:)-600(   vector<string> args \(&argv[1], &argv[argc]\);)]TJ
+T*[(123:)-600(   gettimeofday \(&start_time, NULL\);)]TJ
+T*[(124:)-600(   options opts \(args\);)]TJ
+T*[(125:)-600(   outlog << when\(\) << "Main starting." << endl;)]TJ
+T*[(126:)-600(   for \(size_t child = 0; child < opts.children; ++child\) {)]TJ
+T*[(127:)-600(      pid_t pid = fork\(\);)]TJ
+T*[(128:)-600(      if \(pid < 0\) error \("fork"\);)]TJ
+T*[(129:)-600(      if \(pid == 0\) run_child \(child, opts.loops, opts.cdelays\);)]TJ
+T*[(130:)-600(      outlog << when\(\) << "Child " << pid << " created." << endl;)]TJ
+T*[(131:)-600(      wait_children\(\);)]TJ
+T*[(132:)-600(      sleep \(opts.pdelay\);)]TJ
+T*[(133:)-600(   })]TJ
+T*[(134:)-600(   for \(;;\) {)]TJ
+T*[(135:)-600(      outlog << when\(\) << "Waiting for Godot." << endl;)]TJ
+T*[(136:)-600(      pid_t child_pid = wait_children\(\);)]TJ
+T*[(137:)-600(      if \(child_pid < 0\) break;)]TJ
+T*[(138:)-600(      sleep \(opts.pdelay\);)]TJ
+T*[(139:)-600(   })]TJ
+T*[(140:)-600(   outlog << when\(\) << "Main finished." << endl;)]TJ
+T*[(141:)-600(})]TJ
+(142:)'
+T*[(143:)-600(//TEST// )]TJ
+(144:)'
+T*[(145:)-600(//TEST// ./childwait 5 5 5 2 >childwait.out 2>&1)]TJ
+T*[(146:)-600(//TEST// mkpspdf childwait.ps childwait.cpp* childwait.out*)]TJ
+ET
+Q
+Q
+endstream
+endobj
+25 0 obj
+3287
+endobj
+29 0 obj
+<</Length 30 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(07/07/16)Tj
+-0.659766 -12.8 Td
+(18:13:04)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 518.488 739.2 Tm
+(1)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/1)Tj
+/R12 14 Tf
+-279.107 -2.7 Td
+(childwait.cpp.log)Tj
+-113.929 18 Td
+($cmps109-wm/Examples/wk08a-sockets/small-examples/)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 70.4 718 Tm
+[(1:)-600(@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting childwait.cpp)]TJ
+12 TL
+T*[(2:)-600(childwait.cpp:)]TJ
+T*[(3:)-600(     $Id: childwait.cpp,v 1.2 2014-05-23 12:26:39-07 - - $)]TJ
+T*[(4:)-600(g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 childwait.cpp)]TJ
+T*[(5:)-600(        -o childwait -lglut -lGLU -lGL -lX11 -lrt -lm)]TJ
+T*[(6:)-600(rm -f childwait.o)]TJ
+T*[(7:)-600(@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished childwait.cpp)]TJ
+ET
+Q
+Q
+endstream
+endobj
+30 0 obj
+1010
+endobj
+34 0 obj
+<</Length 35 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(07/07/16)Tj
+-0.659766 -12.8 Td
+(18:13:39)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 518.488 739.2 Tm
+(1)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/1)Tj
+/R12 14 Tf
+-267.25 -2.7 Td
+(childwait.out)Tj
+-125.786 18 Td
+($cmps109-wm/Examples/wk08a-sockets/small-examples/)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 70.4 718 Tm
+[(1:)-600(childwait\(15007\):  0.00005 Main starting.)]TJ
+12 TL
+T*[(2:)-600(childwait\(15007\):  0.00033 Child 15008 created.)]TJ
+T*[(3:)-600(childwait\(15008\):  0.00035 Child 0 starting.)]TJ
+T*[(4:)-600(childwait\(15008\):  2.00063 Child 0 message 0.)]TJ
+T*[(5:)-600(childwait\(15008\):  4.00085 Child 0 message 1.)]TJ
+T*[(6:)-600(childwait\(15007\):  5.00074 Child 15029 created.)]TJ
+T*[(7:)-600(childwait\(15029\):  5.00080 Child 1 starting.)]TJ
+T*[(8:)-600(childwait\(15008\):  6.00105 Child 0 message 2.)]TJ
+T*[(9:)-600(childwait\(15029\):  7.00112 Child 1 message 0.)]TJ
+-6.6 -12 Td
+[(10:)-600(childwait\(15008\):  8.00131 Child 0 message 3.)]TJ
+T*[(11:)-600(childwait\(15029\):  9.00140 Child 1 message 1.)]TJ
+T*[(12:)-600(childwait\(15007\): 10.00126 Child 15060 created.)]TJ
+T*[(13:)-600(childwait\(15060\): 10.00143 Child 2 starting.)]TJ
+T*[(14:)-600(childwait\(15008\): 10.00180 Child 0 message 4.)]TJ
+T*[(15:)-600(childwait\(15008\): 10.00185 Child 0 finished.)]TJ
+T*[(16:)-600(childwait\(15029\): 11.00162 Child 1 message 2.)]TJ
+T*[(17:)-600(childwait\(15060\): 12.00171 Child 2 message 0.)]TJ
+T*[(18:)-600(childwait\(15029\): 13.00183 Child 1 message 3.)]TJ
+T*[(19:)-600(childwait\(15060\): 14.00203 Child 2 message 1.)]TJ
+T*[(20:)-600(childwait\(15029\): 15.00202 Child 1 message 4.)]TJ
+T*[(21:)-600(childwait\(15007\): 15.00203 Child 15134 created.)]TJ
+T*[(22:)-600(childwait\(15029\): 15.00219 Child 1 finished.)]TJ
+T*[(23:)-600(childwait\(15007\): 15.00227 Child pid 15008 status 0 signal 0 core 0)]TJ
+T*[(24:)-600(childwait\(15134\): 15.00247 Child 3 starting.)]TJ
+T*[(25:)-600(childwait\(15060\): 16.00236 Child 2 message 2.)]TJ
+T*[(26:)-600(childwait\(15134\): 17.00279 Child 3 message 0.)]TJ
+T*[(27:)-600(childwait\(15060\): 18.00260 Child 2 message 3.)]TJ
+T*[(28:)-600(childwait\(15134\): 19.00306 Child 3 message 1.)]TJ
+T*[(29:)-600(childwait\(15007\): 20.00270 Child 15153 created.)]TJ
+T*[(30:)-600(childwait\(15007\): 20.00286 Child pid 15029 status 1 signal 0 core 0)]TJ
+T*[(31:)-600(childwait\(15060\): 20.00289 Child 2 message 4.)]TJ
+T*[(32:)-600(childwait\(15153\): 20.00276 Child 4 starting.)]TJ
+T*[(33:)-600(childwait\(15060\): 20.00292 Child 2 finished.)]TJ
+T*[(34:)-600(childwait\(15134\): 21.00333 Child 3 message 2.)]TJ
+T*[(35:)-600(childwait\(15153\): 22.00307 Child 4 message 0.)]TJ
+T*[(36:)-600(childwait\(15134\): 23.00355 Child 3 message 3.)]TJ
+T*[(37:)-600(childwait\(15153\): 24.00332 Child 4 message 1.)]TJ
+T*[(38:)-600(childwait\(15007\): 25.00301 Waiting for Godot.)]TJ
+T*[(39:)-600(childwait\(15007\): 25.00322 Child pid 15060 status 2 signal 0 core 0)]TJ
+T*[(40:)-600(childwait\(15134\): 25.00379 Child 3 message 4.)]TJ
+T*[(41:)-600(childwait\(15134\): 25.00389 Child 3 finished.)]TJ
+T*[(42:)-600(childwait\(15153\): 26.00365 Child 4 message 2.)]TJ
+T*[(43:)-600(childwait\(15153\): 28.00398 Child 4 message 3.)]TJ
+T*[(44:)-600(childwait\(15007\): 30.00340 Waiting for Godot.)]TJ
+T*[(45:)-600(childwait\(15007\): 30.00355 Child pid 15134 status 3 signal 0 core 0)]TJ
+T*[(46:)-600(childwait\(15153\): 30.00426 Child 4 message 4.)]TJ
+T*[(47:)-600(childwait\(15153\): 30.00437 Child 4 finished.)]TJ
+T*[(48:)-600(childwait\(15007\): 35.00366 Waiting for Godot.)]TJ
+T*[(49:)-600(childwait\(15007\): 35.00384 Child pid 15153 status 4 signal 0 core 0)]TJ
+T*[(50:)-600(childwait\(15007\): 35.00387 Main finished.)]TJ
+ET
+Q
+Q
+endstream
+endobj
+35 0 obj
+3916
+endobj
+4 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 16 0 R
+/Font 17 0 R
+>>
+/Contents 5 0 R
+>>
+endobj
+18 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 21 0 R
+/Font 22 0 R
+>>
+/Contents 19 0 R
+>>
+endobj
+23 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 26 0 R
+/Font 27 0 R
+>>
+/Contents 24 0 R
+>>
+endobj
+28 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 31 0 R
+/Font 32 0 R
+>>
+/Contents 29 0 R
+>>
+endobj
+33 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 36 0 R
+/Font 37 0 R
+>>
+/Contents 34 0 R
+>>
+endobj
+3 0 obj
+<< /Type /Pages /Kids [
+4 0 R
+18 0 R
+23 0 R
+28 0 R
+33 0 R
+] /Count 5
+>>
+endobj
+1 0 obj
+<</Type /Catalog /Pages 3 0 R
+/Metadata 43 0 R
+>>
+endobj
+7 0 obj
+<</Type/ExtGState
+/OPM 1>>endobj
+16 0 obj
+<</R7
+7 0 R>>
+endobj
+17 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+21 0 obj
+<</R7
+7 0 R>>
+endobj
+22 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+26 0 obj
+<</R7
+7 0 R>>
+endobj
+27 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+31 0 obj
+<</R7
+7 0 R>>
+endobj
+32 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+36 0 obj
+<</R7
+7 0 R>>
+endobj
+37 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+14 0 obj
+<</BaseFont/XTNPVR+Courier-Bold/FontDescriptor 15 0 R/Type/Font
+/FirstChar 32/LastChar 125/Widths[
+600 600 600 600 600 0 600 600 600 600 600 600 600 600 600 600
+600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 0
+600 600 0 600 0 600 600 600 600 600 0 0 600 600 600 600
+0 0 600 600 600 600 0 600 600 0 0 600 0 600 0 600
+0 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600
+600 0 600 600 600 600 600 600 600 600 600 600 0 600]
+/Encoding 42 0 R/Subtype/Type1>>
+endobj
+42 0 obj
+<</Type/Encoding/BaseEncoding/WinAnsiEncoding/Differences[
+39/quoteright]>>
+endobj
+8 0 obj
+<</BaseFont/ZGVDRZ+Times-Bold/FontDescriptor 9 0 R/Type/Font
+/FirstChar 47/LastChar 58/Widths[ 278
+500 500 0 500 500 0 500 500 500 500 333]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+12 0 obj
+<</BaseFont/NABQBW+Times-Roman/FontDescriptor 13 0 R/Type/Font
+/FirstChar 36/LastChar 120/Widths[ 500 0 0 0 0 0 0 0 0 333 250 278
+500 500 0 0 0 0 0 0 500 500 0 0 0 0 0 0
+0 0 0 0 0 611 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 444 0 444 500 444 0 500 500 278 0 500 278 778 0 500
+500 0 0 389 278 500 0 722 500]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+10 0 obj
+<</BaseFont/CFATFR+Helvetica-Bold/FontDescriptor 11 0 R/Type/Font
+/FirstChar 47/LastChar 51/Widths[ 278
+0 556 556 556]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+15 0 obj
+<</Type/FontDescriptor/FontName/XTNPVR+Courier-Bold/FontBBox[-21 -205 623 695]/Flags 7
+/Ascent 695
+/CapHeight 597
+/Descent -205
+/ItalicAngle 0
+/StemV 150
+/AvgWidth 600
+/MaxWidth 600
+/MissingWidth 600
+/XHeight 451
+/CharSet(/A/C/E/F/G/H/I/L/M/N/O/R/S/T/U/W/X/a/ampersand/asterisk/at/b/braceleft/braceright/bracketleft/bracketright/c/colon/comma/d/dollar/e/eight/equal/exclam/f/five/four/g/greater/h/hyphen/i/j/k/l/less/m/n/nine/numbersign/o/one/p/parenleft/parenright/period/plus/quotedbl/quoteright/r/s/semicolon/seven/six/slash/space/t/three/two/u/underscore/v/w/x/y/z/zero)/FontFile3 38 0 R>>
+endobj
+38 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 9073>>stream
+Gat=.#ujjT\ip.8EiN/Ej0>7o!a<"W;sdM!l`>6G)+;uSa:P5%GmZnc+DcWp&jf,3b[D2"`"BD;
+[G"i#D/6i=gKST3HeW>;[b]!5\So00'#GdT]B_%OJD',PrK#k9rVqU>\@E.j%d2s8ij`Z!@.a)&
+ip[':#;_dQ*9MA[jpfpe[-t![drjG)M"RSh?d9\3!Q/0Y0XlqkVp$.&KY.YqNIWI]&?[!J@ZFm-
+=HX@M$4_pcHu&TphoSfp:@%jhp4<GU4SL3`=$0Oe`e]3k4X]5riWI*;P)-opfQTKFj/9f4700!r
+iCT2o(sdU8%Kmh\?h;qe*Z4%M8e`n@8At%iD_7UJ3G6pEg!fK#H/>9OrGaQ`)oRkJch3m2$N3.3
+#f:q&j::^#ai`gI0rneKLg(ObYV1"rqP8WNaToH\2[0G@C_:Lnh%mF^4Ml<rmccMkS2i*2p70XC
+DpNdNo=qs#O'=;eiLB9gReYa8pYVFPA;^CdJf%!o,Sgr\Lc:18`'e&b0o=OP]L?Wa-5/S]'Z-3h
+5qF8YLulQs@OJF4QpLK\.uB\4.Uj0uReVD86d-k-&oSHLLj?pbiZ2J1iD%ND?7+MVL(bef-,_=P
+X2HW",f(l%&>KN"(eqY4E!U[)L%$3iM(sZ&0p^`1Y7kgc4@2;0KTLG8(d`HZ6]"7M0Oc8M.=U>+
+B>;WZ/g=BF[DOSO4-f[Jft`NAL;(TO.;Oao&H,GOTdPUa]fc/Qb2I,kh]>WYipeP\Y:b1Pr9CI1
+/,42\s#mBQSkK)<3d<K/m?mc/pN%C\A%6"qNen_(1$7&S+3*ll`f@b(qR`pQH@u6P<A7+..jTg%
+$.fFj4bnBen3#`Rer(El)?9,Lop^ls4T4EU#u`2s:\]0Di5EB+RQ]m<oBUAX=(&XNK1dai2@f=:
+S3p@qk/NQ]5a`iu8`fMRO:5$odUKa^BumFY'GQ_lTNIu60@B%.^^NnoOu/_'/(]RXnn/Tj;)g"E
+]IT2DFMB?T/+r0G5^btnR9f`(+NMYHNkMF=MWA7KkV7$T]rY&(OT6ksXLuK*IPr+h-L\`e>ZP5?
+r72Wu)>R&I%(!Xe57W+02=tug!Rr5Z*LWIg"=,+k,5Fb>Kk)Z>1f1.4RGFl6[4)<j^0;=2kG`cu
+l'YIME%T2HIHG(8q8Cpdf%?N[[#0&M/h%3eHX-?,IaV,REMWmCE%MT*:-9Fk+'Q(eGRrF26rO'@
+P[.Cgc,*lpfLa!6d/-XW74Dp>!%)8KWq3IJA/n.^<[cGXMA.0:EV_M-l3tUNT*@;u7U7aInE?-3
+%&d=)''+RbVkt'f8Zc_e#AnEM$dh^e:g@J>h<71rb+Y\JJ)f*-P_q<4_-ubmd'+((65#+DE&cgE
+k8N>Q"*7TS;J`S]`]7dd2f,Yd!olYC[h*a-E^ulJq'KYPOcSI780d[3ne1(YU;+IJC$Cd\S*/!u
+Fm5s1Dd<3;Lc7o50f*YjbK)$sYZ]1NjpKAJ;6qiBlT5m,5XWn;oX8]J%o%\[+BS@;(S?sN*YUA3
+Q.:CWW]%:`P*V]-OWfgB!Q\)+9*5lT!/60@J))Ha`r#_XgV5VTaJH:r\eKQrIa#VFNDch(.ZCB:
+?ihWXI;trU;Zs,"^[XR3N`N!Opp3TR.Cu=[aWOlSQGdNop=US7#*h*lQT!KQ[9WDSI5^"cb%3Kf
++9)U:5^N@3aE,85P^PWI`t?:K!V5*7_U^V)6ep2QSO1?K,J;@&>d#PR=6%PkOVP[Y-fUA6YKA\!
+JD*]6ac&I?%[uH9$$GcL5p2Cq\\W4@>jot-NFf57janCDPO9j'a-7$nIgE`(,Cd/<1u!B0U^ZmH
+=nHo1'#\JEq/W%U/2r1oVtt^96U<=8kWiI70$B\_.`#O?<QNUQ1:8)m.-3P;$`<ainB8+b\R'$f
+06c/GYL*D%"fHHZk7,30R8.HtX/(Y,FXl4:ol@1_QsC"HrpNMtS48*F[4YB*.nS.IAKY!q;Xr]Q
++JsOKNp"b\At*QTGoQ1CKGD'!)fS]MZ",U\bZ;!Gmb(\)0IHh[6V+Yr5>p1`>N[s^G2da!aX]LK
+/?%J@6:*YgjNm\bT80Hc`u9LmZQou5Af:\M>?PYl<>slA_XO!J6O;<N!gDNtf[o=,Cig\X&Z<HT
+2&Y')WFf:o_=\]eW3mSW3i>fNQTK>%%5(^pJ7s_SFZXjAQPBT2NaJC3(&"7;]LVK5K>TCknr2Sm
+=E->/23Z+QKRNo,?l4!*AZ!B2Zm!^Ca4:;=XknRs?j!9kG=$$NPKK/I$Gh;ArS!fYcHY,7m\7l*
+cr2Fl86)6m<gG7n;aD<:l]\PjqnD'Y8:eE;`>F:4_VS!e32.pfk6O\.MFgYPMLd[h8Cs/P7WoB%
+9)j;7hMJ1k&$(?qk('0PqK4i!DJFVmJP6;j<9Yk'RA3LI"KT<J+P?)o2GTGFIVs4<:;RNTX4Cqg
+eP7O#l\Cdi)"4(K?&jH?XWdk2%k.@lHJhjKWXH"%4T[65f6Et;db3."cu@c^!SdaIEV^5`2uj+S
+Xh5H;[//QES-Rs@5S_9M^!c>s6m,F(a6Y>6=gT2#!,J?XI!pCZQ\*3+$6E;P]t/X\Bts*\rrp+;
+B1r5DZ5Z@CCiG>e"%aItU$r:*Y&PXP+(&S=aoYafT*.#2JopRHjR*;:VdlLE5SQ(7KJtUU]4'h5
+$7"H=kl]&6GKc>M"c(?W@SfKrj!uDn9!pcaYUA!d_Zp;GEFF0uW_ff"jc2Y2UMMX<_SKe@eAd5s
+MFLoMhLISL3=F$RK2c]u_[e5O:H%="Q%HSriAYbLG;+(&=QD#!j%q-D=$fpgSOPQjT$P%h=dIR%
+9m-!n'u%F+Y_9tKOO0#s;Wu*^6CJAGff4.%iQ;iq+D5(ol(!K69DWOa:@eS;7WIO(+`+s%TYF=R
+Z1XQ[>^$j1&o9&PgD80RF#<8D3"HpeSL5ldJ+EG6%L7-\@gg2`ENg^kn1g+l59_UD;'3(?E!:?4
++?+AY_P8a__uY,8bM:C,a"#;-p<A9H]1jOk%)iU0jEW_T7N<8bc%"ktL]?^16gj$AV6B'(,736r
+5B*7Q+7KN<klmQ8IJtSi4p$-8f?cJ()X[^uDt(do%3%t^rEM=7N:4rZ\s9\TiBf:":%sB`\9#cO
+B[-W<]c(Rh1`f,WPNqgs1D:ElQ;38WF=P_%e?&WZrTO6%2cR@O\7ut.oFImJ`7?5hE?>Ws_I7$*
+']oo-YUON%q:!d`BS>9kZt+YP!eruP:IUSi=`m3Y6*oL&Tf'Rk:tP!.,%3$@IpmS.(mkD+7IBW'
+O[qi)348C]pVY1@NRap0r82Rh)netQ20h9Vp4f"d%UVBk=`\AEZ;&t],j$D?5XTbZd[\q052D[P
+lDp<i,T!>CV0VsKH_324@C]#o5RA2GPP7Af^h+B&KiogmJ4>Clo0aQgbuM&YYsEX#j0-+jQ-r&3
+l[ee+A[C'O?/:9?)g1uudRi,#*1$<HXJ]qmU'C1b?8f2>AH633AiFjg4<*(AFr>Z6/sMtfG2dbs
+7;s8p)KTWeZ/*I/Q7i7X_60$9+pq*=UJHH\oK$tlFGU9V!`>sG3a+'HV<n?6>jq9.RZ'tkeO$=E
+a`+h\?eNnJQ5p^5%VOkA!TDh_.\P/OBB7#arg#irWU<*tKYqYo(Zjj[cgi9gCsGFW49mfVb&B7L
+k0_op_4<D:GF[lMl[F>,fdFis8XR_H2`ZMD`;k1%q"OJV<*3^0])W:-0o1K;LNCWZbt=V!B&i<S
+:S/pc9kqc7m1MV".,)h&U+pcrNR*^,WrrYYrq\5!8lNc)6K>c&IG+aUVu<g=s,'J:2+,!P]tCWT
+P79#hq<@H$Kj50(T:(tCMG``d%)?ep[&O#\@:Mr)NR1k\C-2TYJJNM?:@eP__5-ugNCp8".SBOm
+I?qE'4;_Ht[#Dq/b:T6l\)B<dK8)b?610dZFG0t1kife`g<6-Y3uM!>QtH-+5q3dn+jjEAM$1&H
+M`<!^G]$7d:le<UnQD:5QjpAsNTdNEp(#O=0qhA,#[t=%6&p\m]DRGG:0,Sifesb75TTT:f6"r>
+=ej3_nb]R\*Lt>@7T@I"c`F_(lcU:m5Z4=;Uc/</M`QJrAT]8++%)jr:I+OZ\[QjNBd6^g[`7e8
+E;,,BS&&:4VJ=;24XWG+&H<KT%#u$oCS=';`>]6T*LKBl4EutU[&7;SZnW6tK.ppFq?)3i.MgW*
+f;(<UB$b()Y-)@mnPl,S]Oc^a3"_K4!ZDug"Pec+!ngU\g1X8LB.ZKGT:^mocuB[50s>X1n+dK&
+<_`R+*pV<,`).]GhuCO4_1Zn:I=qh/aQ4#&N$]aX$+N?O*HJ$oR5]UG[2]u^'bqU;"k0[_M*,(7
+SM$9I':lNMbQU2]fIKqXICeL7b:U2B>$MChD53UQ1T0"4ru:9QNqo*_SariF%C?DS#OtSL"&=Jr
+p]d8g9DIoI=+ic.CMQ/M%,^I2?Y:K&E`k)+b2e7@5q[8kqpW<5c<0p)N[B7ghcZ7m:)s<O]r3is
+Q#*HX?#2KcWG31ceG>[:5h2*#e5],cP!WTEDLLJ-r7')i>@n4pG4Qs]k=#`1)Va`As4*n;[r1*I
+&s<b"qp?:dof-Dn0GEXP:&\a0'%*'QPE6#is(rAgF1.j>q1N]+cSm7oMZDr!+S2XOOE;]jkMDao
+K^bu*q%8O+!X\&;hgE(Nan#+o(,+N`q9)uD07PQq%\L<m1A'r_@/WShI0u@!I!,M?9;(,-4CXu^
+`U!S>*I71&L#F:j!+hS\<-.?@F<I=)@[?H9:[9fDEu%0Q!Hbe@,8FHZg/`UdjgumKIt3/l_VmC4
+cecr:s1u.MdI]*Q;<\2DdQ*#mo5"eK_F1(O6PBp-1ihJ\JkkZI^X[Mk'_m@XIJ,6L>(C'gQrbs+
+<i8'p>7D`aZl>M?h0@OHK^JHe&H#luEI@NTOY@CXR>8WW-d7u5DdS2E(teX%=:)]-1,Sq)FVt*=
++:<Je?oZ8XPfd*A1h7RG6M@5:]dGN.M(<(HX>Iq"X\,KFZ8e<Rj9f%38B$?Q47KkcbZHuI97tQY
+87?"+U[3<HBBc:pnr/HJ@fkeGHT-^4?*h8J74(j\!h_*/ldG?&*>F$pbHPK.27u)Lpd:pqK,1fO
+FO[k.O0G^(4S\irfu3T77U^OaT^cmJ&n@dc5p'/RXi,']7q^9u=&2BhFFq@`!"/+'0OsQRJfWrp
+;[RHT"g>b9qcF4]mMHG\e*cjJmH.ZQEnRc>&1#s$q<RK9AiDb88-*kYAfed)G_AORa2+H[%u_U<
+rFpm(S2S,j7Kke.aR2B,T:PW?Zf1V\@^Q+0L$kj']D-.H4!'#4ld1js1"G=22*GMnA.r56(c@#`
+q/iV+nZ;Ai//_"GVR]&J3"@he`lT)jU:6g4*:aKhlK!ZtWe3H1O;e]+%(3s?WMp-aL/a'1h4jRI
+pk*(23&p6chrqt)nI+\.a^a[(@9KSt)"b+RDVE8X;hM2dYD2E&_Mf:36i-n>:`JZ4H0:&"RnnMb
+J8L&G_8-P^108;LV'#XG.o1'+Thkh%XKZTUYdYkL<6@_@[lnHjBY)hnHNDpgY1\`'bq+d6X2ntP
+W[T%sU_HF\4c.k"kh3o@LCGn3bW])/m5F1NI_E`c%D=G6biiWGM'*.Y=!SeuDZb68\A$]nE7Xd\
+jM6Kimc3j+2V491eW-c_B8D9*g<]`Pp4g)_5k_2>(6]6_ZUQ=#Zp2M&f6E'9+VaO^g3R2Lr\1<"
+>S,9sC-$k_=FrY'gjLCYJF.Cff$cjWH7j:_Y:p:Uq;tROld<HS^%QhM4\(7"lGYHK4.]]9ie(Ys
+pCpa6oZp3+SE%ndNS%'$"Cb;%IFcrO"F&YE@=b'gNhKMtF`mttRE@m39J[Ur>*E!;A%\>FE'\Eq
+QnQ$VRcdIb-KB'?W9EJ3$F*]%9!,Z?HYgu+':S5lmrnqG?b^DA0+%6H%%'HW++<f"L3JVt`a.IO
+kKk2e+N=<+<@Qa-=4c.E=Vi>W,(h*aJqNA6>1i\%?L?f-bS'd0DLPC;f^fpho-^ZLBF7!:<K.rW
+fJK!e.R7A?H_EPN>6\UZd8dG/<Q4gs'"0JdD2b*Ho.<%,a7p,V%=T#KofF[=nLrVu[K-=q;6Z[r
+GTiGC:#ge-eqK[/c,$:j07o,?<*=98k?7+Vn0<Y$s,DJJij5+5:TPUuq$:p:maWggm/H>XHN;:/
+AphNBd@aO@Zf]hQ/EI`>lJjFi<?!m"&>8h]+AjS^ZGY<).hY7;P8giCZ3um^9VJ;q'j!;BhGdp_
+[jI>0C'8"*_EKTDbl_T7bqX@+ecIYkE+GXu"\6uhA6XR8/KI6*6s=&8oQe"CAV0A$\R!Z3^7Y]l
+s8:ZAfT#-2Yob@P1BMCbrN@kselG$5U$=>A:-mK7hkK)![Nkt\#XmWK4$a\u<>ekB?=knS$]5jD
+20qVYc(U:Y5[Eh@YX=Wp2eeRsci1is9PoL53+aQ+?)lQ3!_;\l%T8IqK3=aQ5!CN)8cso:0$];Q
+-cBMa6rYEghmd^gV>t)CeJ;h6nf%,DCn"ItC^rNDQ)Co(Pbl$^)m?=OND#'=>N4tu!ioM*_!Nbk
+L@`YcY)8/QX-1;*b3AqgbZ+JQaphInnEGb=pddtZEg'\ZTe9B4b>0J9Kn(9WRh;3],)HVhXTIfR
+6p[%t7A$DJ#F%2#:;#VY#`e]ZS?_=Gn3i3-!k8B9"a)G8`Gg;)858FG0q^\o=BIrK&`9lOJF\*2
+B="BX[anPcT[O2d%p=h9"6r?GjK<q.Jp'1'cXH08)\0rk:L.Y(c:HJCJNFrS#6k[.ch;V1h0B%L
+#MTa[g2bB]T[E;E8YaZI&l+"G>eAul@J^j)B;c7D@7,s@1)fQuACT]l1$;Ca)-.eWV^p+.'FQrO
+NZ"8cop=]#QS.h>)S\0s>9+lO)O,NHJ<Ijj8[^h8$]"\.a`?[6YiSF/=`B4LULsOb?B,`!14gO'
+#6ShilS4/tNDDb=Dpstj`.Rr:!$0/,.EXEFoP,D>XHf(%,J.\kc<RSl_$@gtl_5/I3FI-sHSteX
+=+;dt(An?+/o,0:DCn!R/lIf.c@^*u!Y]eQ$hT6Ff:MDHklB4'*P486%1H@R2RrF,.;N8fQ"+5&
+)pMJt1o4tTB!PS@j;q/uEO@[C`@]%130t4u+*OcVbNjMmec8C?GqIj6`/J(RkhP0&,:K3[LmiPV
+&rCc^F&R//"a-b"0;:#F$9YD_Zo"t;g5iOcd4:UnEhHL7cs_W.O5MeJaDYq%CbQiYH]A%U1EV'3
+?YQiiJFf"B`a.BV;)9"`n?MDp&g6*s?5F1<]4$Z]rFKp^*.@k<T*#"qi+hK/F_qg2#0$5BA&5m.
+H\0kQhpZW.bd!IL6N1J*Fo1f)^^e,M6*")UCd$6mY3d-S2KK**lg)b^\f#5RU33asi*cXirP=p,
+=Qob'keTGo-%699=P%P3rH2]&_R">8)DQ<9(Qa9ngl-k7"Yu&W-UhjQpqY"McQCq(HLEN(1Y6AZ
+KDXS=dU/bE#(G^j4<JqNFs[CuLk:e5J1VJpIQ-kZcGO4+:'kHm7n\%%"n)WEp:Vh+>sI-<an:sm
+[nBhKU%%"_fP+QX9lpu;VlA$B7TDqZ%k5\qfo$JCN]8%2EaM,le_JSXCKskMcYA2<R1mQB7ZijH
+1!k@sJZDcgWV#2)%N(6drh':YU)Gchc-&rc--5Y5.$(EE10:gj$ucgQ$[+h,W/dm8Xp#l6JJ[S\
+q#uJ;\Ks[`OaAZ,NSTlReFuuFk>WY)rI`iaa;p)#osdelYtW?oa6Z[Db^+^i/B'omIX\fio:VZn
+3<B8,_K#s#k5>%NrSc9SY4)bh5I>KBe8o&dY/C_aj(&jBSoiFBn/b\VDYq>)0;\(Q19(sQ#dr8K
+FR:uYl3;s;M:'JRW<I"]]2$Bde!gT:mFQhcPIqSHJaT2QfU/,24t<Ha?q9D&$i4.1ispTV;nh?V
+Z!=sP^'>\,,EgcZRUFU!ijD8M*Vu-Y>jkjW<*s?X92<\E'M-BB[;9n\W&Jm\ru0RKmXmORm+TBU
+#nB:U3[6F22_-g72`9JuSu:"Ijsi3U+N$C(B'*P!]o`7FJJ[N5&X!4sooe@UlYG5.,AVJWKC9q!
+UnJBH<#Ti_;!%cce:lQZ3?!+,0r695."Ej1?.H=kKt&q^:dgGG-sOlLJuP]aR&b5Q/(>8bHr).K
+`#9W5Sp;(UBDko?5b.=d$jZ3r-c$+G[IQ(LjC,0jW3[<U;0@KaMT/P"&ZG?#Nie=Bb-SG&"]:#-
+r"q[N>d8<XG[Y(KDBZc;6a17i#@jW[YlVG+X4NZh$i$3KUth$'s&V)cdSO7P>1?lT.4YW\^oTBP
+-*<_lqN1XQ`TRCb0d@n^[l)ncAOi1]CCcj"2A"O?L@_!E(=Ih@]@nVtbbtPDS3=o9NC)t2IrF%T
+lVlCOdT6,^[*m$O4CZe$koe(M-oJ"eAZjb#+Ou]b"GNKscVVD.K-BYgb@!_-5t7FIGbfrPoZXZ^
+[<o>[XTU,8Ue@o8YTIM4Y--!;Vo*2lDWS.>b7J;>)?i5(EbRhPRtt:XX#L2S>usm#CJYhg9YsfV
+/aO;C)gKm%bNI5HDo)Y,5h3kS7+tdO1>WKn_V7N!`C\K8.Xd3D#'+LL$7::[iDWf%2d)#A"k"hk
+79j,P6$K8*E!s7!^es#c!*t1"D[#2kSkLYlZ.f=SqrY9Ip0G]:%d3.>TA4uMG?gQ8N#.K/'^r4.
+1T:+.=+$ppj_@BjfdD'IV8ZKAZ7)PG#b-+dp&2WL!f`e+?:@KikWKthAmSfYrTM]$U%\Q[c[//W
+<[O*OV.XD<V@!tM!n':9++j!FQp[U3a]H=1'V*-pUH\M8Dc]#DY7[F2[o@JsL-s*J\=rlnZ'J/n
+lqrpYB+l!H]0[F&V#Y3NP02E\MnZuA&Y/gZm.,2%<`KVlC+CfMMmINREhVsH^KXp"N$Y.:UF*E!
+>+V:[MAOJMF8sXK(\[`aME/=pf(aj`>T*$eNf0/nMGm_8K[7"XO-qKo&im2\E:TDWs#.^(cQA!]
+l>AS6SD1kj)L>gC+"Th5Y0.3uJ+`qN.8Nsbm2,P24rVH\GT3eag-ZsB6hAF_N^&7G=I:r]37;9@
+OH5,Y)Z#Y@fW[l`?7(L."a_1Mj8~>
+endstream
+endobj
+9 0 obj
+<</Type/FontDescriptor/FontName/ZGVDRZ+Times-Bold/FontBBox[-24 -19 476 691]/Flags 65568
+/Ascent 691
+/CapHeight 691
+/Descent -19
+/ItalicAngle 0
+/StemV 71
+/MissingWidth 500
+/CharSet(/colon/eight/four/nine/one/seven/six/slash/three/zero)/FontFile3 39 0 R>>
+endobj
+39 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 1418>>stream
+Gar?.CJ7Z>(rssr[hDp^:sQ9Nm>5j4"(I1+=r:SUaB/EKJJ#/;5`\b*9j=tYXYL\]hSDG]%NV'n
+E`$5F^g\""F#]#C6sS^Vc&C&(9f=f6IFt.?]Zf_-ZL#KC4F&RJqgY74pH0]E%Nn<*PS]gkX>;lS
+DDA8HM>UP?Nsag?78>f1nE3?:M7e:/&5n=G69H)24rOWXU!WcW["Ju7P&tnn1[U4""6S;u(S`Q2
+.SWH-9_pE;2])rsFjn)?-B!#8CMcb8i#H8ZG))?j\^Hj=iO$R5Y$l&s9o_7^;e7_hVNkrc<E[rY
+AuF<kFu\gn)/WsePG6OjP6LPiJ_=5_k[]S;eg_V;?oKcb9Km5I2d65g+:'01K201$dp&<N(fCYa
+KErm@Li@qm,)A+0MMNP/&on!W+VpRpi]:cr>KB#2e,eU(FeVdJ2&O?gS3M]P@EtK4l_XC/hdqtC
+UqqGZB@O+'-,#BA;32uR%Y#8m0$:;tc>4nH9L`57>l>%j#8PT=+9BX$p]`!Q>.q/QO%+iDdm%dk
+Zb:k,KrEhqH-g<!8Ht"R2eT=7q)D\4W$<r[4M3()>6%h=HnU<9:/":Rb<G1Smc\=+knuP\.ADQC
+)i^:t>)!H@R^I!sPF$W-](Y9mkTRq&P6j!7Y42m\_nZLsgHcaOI!V">kfI$BKARg:c;[MEDI$P2
+<RWLG@[h')R477r0jB.HT#aU6I$`=<4'o*K9j,eF&]Hf$k)rrVcQNbKJ/%"G*55t\;KL4>I&<d5
+;EhcU2/n".nl`f\Z.eTW@u=@bk9'mq]UfK5%V"sS=<F77S_$.dc"Err$Ff#6S<gcq=-<n`i$03d
+;_C?e`7tBU'N`&0=XgRo9sR*2"C>@<`0$gf!t?N4q"b^@.X-@%[Se[5>):-'X!kX@\KJgUaNlMn
+E<Ki8_U=1YP9-e$,/c]k$um(3gk)HfH\9:^,7ZhN/TWfB%(']:-X%Ra-$6cb]@3>,?%!gh+_nE/
+rZ"=ir-nY]H?k^]&g*2D8I+[05G(:We4?iafdHT<FToe`iTJ*J+UA;Q%0k0e(!%VQYO$ptFHP>>
+fmgeL5Koio.e[Qd-pb33""8WRH^e/7.j)G!@f!.;Oc.t3?o_P_P.aVm>XI2CMdI5tT_ON'I&VK'
+h4SA-^6or#($W`uY51b5!iBWR1V=01#PCi?F\+mdou4JuZ0D'!iZ8TVAU$(!%RZCE8gbPKd(jT.
+6]^C0GkgZ5#a?%ifDlQ.i)%*&8)qAiBg>E'GP7#ppYr!u[rI@dJh^B#gH9=#>#0Qk_L:u/U@MU]
+TEjc+Kr[S5*HUmgcJ!WN;&42BC1s`BK&N+&dNK[[8Os"*?-\lgpA"@+bYDKW1;cj)2/lo-cE\0r
+^4!=DPES=Nd\mI9`:6hIP]G3/5[`Xd'++msK8Le'p]nUs$?Z~>
+endstream
+endobj
+13 0 obj
+<</Type/FontDescriptor/FontName/NABQBW+Times-Roman/FontBBox[-9 -218 775 727]/Flags 32
+/Ascent 727
+/CapHeight 662
+/Descent -218
+/ItalicAngle 0
+/StemV 116
+/MissingWidth 500
+/XHeight 460
+/CharSet(/E/a/c/d/dollar/e/eight/g/h/hyphen/i/k/l/m/nine/o/one/p/period/s/slash/t/u/w/x/zero)/FontFile3 40 0 R>>
+endobj
+40 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 3930>>stream
+Gar>FHW3pF^-47sH`K\AdM*l_amF2?:902ZNmP%@4,DUV>'Zm94=!0GORN[04<Y#^9m@od63r6g
+GbYNm(<%cul?%DRMfr:2X6m:JktG`[fnZuKCYcn`He85VY'&;uB:n)\]tXI4n&M/M<`(C`b;WIj
+.k06n/^I/7>?Pm=K37c(X6:#Z$BhmR[X=%?JVn8VY=$$?jQk:jU@1&?ps*rjo,2@lQ=@1&V7,6"
+\O':=c,qXO^Ch?RnE\\4g[ouF[YBKiM:5K)CD$$$'M>_&`#G,*&rB;baHbg$rDjo`m$>bh8&\Ud
+Pp3h:S<f9\a]NP@:QnA1M>'PP;M@GD,(:j9fA^Wj+^6l]YO24`\`q(eidY#^hCfBQ7uF&f=iI\R
+K)]b_-u-G#&Q)Y0X@t--RN]eqQ6)7OD@YM9Z8FK*AVrN678Y#'==T>gV\5ud;[9;X<!9Uag./hL
+]gkLh+&Mh`5O'-O=mA#iT+Xud.1R*2i(*SsY.%Mg=\i'EXLc84i^<OkpjC=Xj.,;@J9Bce>Qo>f
+^TM1P(9ZN.\p<td2485tYEdNO5MBT9dbDF9JT#Po[qo;>Vt.q;+g2J$$2T)qp;d/ns+uFh@*9ec
+]LXR903rm`C`o5mHf*,iloA2mP0]EN7(;*L1KSK$R91`d?.Q0q\V=PHn$;uL-!^@%J7ibo2t3;O
+D5[cW;4A_3oJ@M["MOeb$1^!?@5Hg^Ba8S.C7EU.Lpqu@S0#Q^Jp>P4Yn-g[IQ$2T=(>,8i_i1&
+^grETak"It$1P!6o*6q/ceOrE73H"\H945LH@1gR!2GS&j*5k_2k;AanGhb9!+$99"+H.]k8kmJ
+C*EBVJdUohPh'6LRHplBOW.b_K>EnqV0.O0DQGJM)Ukb:HB#@,?C?`p$-!-RDe!:l&-m20#Bd$%
+>@B2:Jq(U^lK.SO9>MX4;hH:PdfTS=B[jdU6f.6/qDdu>"bnY#LCX#k]DTu\`F1\-Gan2Fr'u2N
+IZ^Dg<``?>CMKl2^k<+sI08Q@mD[';q*@*;'>n=7O$6)I/`_j>h1\BH83&"mPffM%V8ADPMJhfD
+/12T9Y0Bg^D*a7"fn<P0],<$Q-?"B6HdLb"$THBINdNf=,1J"22K^\<(RuK9cHHek[ri)Wn;q(=
+p)WjN@Pdgf.=h-mgZ`rHn&@g*\W3+>PL*E?W\>>:Z)L=V<KQr?D_r?Vl]J$P\ultBDO`'rF*A%i
+?CF%)1H-N-2O>,B)2aP!;r)ptKI6cg_;DaQPZin:cu6KQXo>eqn/`p7Rk?hH2ffMqRqG.a1"cbU
+,A#f5V8[rp6D=QQDUrLnMIMu+(Vu&?UJiA.)rE"^2;f]PWu<"5U]Ki[..OY('5d^H_Wbc0.,[PF
+=.f/E2kOk#pap,n4S2AZMn[KDU'@A^LCodp[Ad!+fLcJPGMo4$)2+)MJ@_1dB5Gp`;UjWL<K#]I
+B.LBT2QB)7;W'(8[E;A65Rmh[CpB&P1V<@[6$K`md$9E>aJ6P:>e?jF2'BN;V2o&^1%79!Dp>@B
+2'RS\2)M_3AF@Q8JaHBY%3?i"6\#8nq<.uCYfHe'=88%F"n5:9q`j2/BlmrEJjm]1;^._3d%#AH
+h,?G-g2R,/c0lX0/Fk4$HTF;qoed192GnTqN?-\[s)?T3g&AWDiI4%D5:ER+PnY`+;Nq9/M34]6
+Y+1sIS@^!+3>3=b9.#9\RJOs!0IF*e.mB,a.nXo;)L4aXK%]_BBi.#YQR9cC\l4\N.-.(/GHpYa
+$i$ra.mqH;fdZJS:(7%-qf_TB[LLgq>\'<B$s#G`8:u#qiW>P$Uf1um)Gd#R8i;KrW7>T$XC]1.
+WbqljW(f@<qu_4)ODmcnDS!ZO@hG[003piGCN)2c>Y^@D5(;WU,-Ek-9unSF.UuIR2-du_2U*+I
+oe*Q7QZ*3p.3bfH)SqO0^VJdr(N01cgo8VAL`23=noe"\'(g<hFC0tdZf=lV1+QXP0L`\lm=aPS
+qn\YJqIJ@-\?N`'.K@ggLP@h=7^)?fqB'2.&f^jai8\1hES>rCVA`SKbc51j8UgfcetfTf_u""s
+EaZ(f7!8]o2]:%4,QpYm(!T5d+TT?36XCt_hgGU1\p2)5AlSCd^apR<2!PKqQ*S2eLL=f^(\ell
+RD&4fq:XhRd7RV%E8E8Qj",Ki%co)*9$M])7AJ@`]Qr$6j%/hXLp(bJs'QZl(sX-dgmN[&U1BNW
+R[gP5NPZeMhVO:/UUujH2'jOBn0WVU^!YkAckY%TGJ:?1*QaekYBt4R0@#u!n?T\cEVX(YQVHYi
+Jc(A^!@:Xq.;d&t5_VSQOH3f=45h?FrK9rt7&;A5RE:t_Vc=oe.V[:).X*6gE_n*A^R+NTm_-?6
+3T5f<pFnXZXsQrX;b-VBJaq<C-Idc4,@g]GVA`Z5*U9SHehj,]kbN!mJ&LXk6YFes\Q^iuM=KhV
+reU(Pdk$+.NG,YmG%D61lVRb^\o#`lZ_@[%4o^[hChBWL/@S@+T&"E(A\a\Gm)'pBrSd:h(dTc8
+k[W1V96`[BA6\S6rm]/bHNM$i]ibpkEX8>O#&TS2Wc>HT`&UM7F9CMJn0ID]2\2]!IX"tNkCL0=
+W[k$,.2OB^3TZpJ[Z7o/E8"Wd.XHE";/0#u<$gQXF+L8Z6OVr##U>OUX_Z.5fDY&cn)rR^Wq?LM
+YDg@NYoGX=MAE8![L!7dR`\Ps6k)u&6,0=TM.(@SG8i"PkVg?rnE<8F_H.EdalQeshLY*t!H1hZ
+T'3q9$?`Vf>[lHRfmG,EXTQBOLGh`r["Oj%(/)/tM5>=qAaN?q\eU22E$W5.nmPgheRGr9=Tin8
+SI(]m7>4;\/61^m(H80cerb-9CrZ!r"9#\m]fIrW(V&a7X_n://s<6n:=M+%1&&,^6DMp_A(rYu
+%L#j5M(YteWa(Wian^/0XM6<k4.)HT\]qN6[1)Y^*?&NZk5uErd70RmWq7nT=g)n>$]t@=nP:Qs
+)"s1KZJ34fZsf!fE!]%;4R<RS-,-_2?JCEH?W265Lbu9Q:rh'>0a_/.hPtH_'+g3*A@4L8[bgFd
+pDAL[]!@_kbloLbYE)uj[)`EFCXm<E(#fEO3'G\RKA_-h,#gt9!/dq\N&!/Xj=ZO4c*_<@d=_Lt
+"2#u@o'`:co:t;uWd/<.*(iM;9kYfb$]NZT;Q2i\/b$XgEVq]F"Kl0/?jAn/f3AE,\5)L$iTL3_
+cRm5)jn0At%/'9'%-@6FMAU.dSn0'T4h2QTho@%Cs4kN&^,"M$IEVV<XIdJbq3[.YN%l*EQ"=Pt
+`CL8"A2PR4&[M7,bjgp=Ka[)aRWaaQ/R18d+i<Of:(+o<5lu_*I/_Q.7Sk?uOs8bs4lp$1")"7G
+m"bU.Q1M,eR*=!6Cj_+35k]nN1n^\=\\?qSDKFDceELdI*tpe##Z+9-;0dl,6=WSkJU,$7G1Ms@
+cps2s&ZjLI?2!md?i3%G%[Q".rB,V>Lo4t&s69I6'Y4dh%);]j_Kp91aEnqQ:UUOSh[h9==LNGP
+X7u?t%ea3+o^>-',$L5VP',YKe][m:&pgi[%".NbOnX#F/q!Uhf@7YTiTqb<gHsI"\d0*I:L:Xs
+S['VHIO&)@1g:NkZE0u=2GDR`?In&,fp@TlfZ/92j8/+,5/2]A75tS4YUt)WiKL\(2Nf3BGPb*.
+?'oAr4>0AU3s]%a2W[;R#qtn4ZDp5u+YV'hAg+Z7kq6:(hfcQ::ZV6A2@gr*p$(jSk6cHTGQ'=S
+\bFeL>I9*Ffg+gsFmX.`CXP`bBp;][j@^61UF6j'[q22U*0>BDD]OOB$uE)+5?%=[WlYY(bF)<*
+,n#*1oP8EDAZ00f@)UeSM*=8$Q/ao$_5+q8f%l"h"tUWeVn%9Zah,Ced#6%Q1kRE>No"H'A)p/Z
+pJIIgoDs7s/+Y>MoM^)"GRoi-E!OuW=?C3jomP3T]8iWb$TCs(qZ~>
+endstream
+endobj
+11 0 obj
+<</Type/FontDescriptor/FontName/CFATFR+Helvetica-Bold/FontBBox[0 -23 516 724]/Flags 65568
+/Ascent 724
+/CapHeight 724
+/Descent -23
+/ItalicAngle 0
+/StemV 77
+/MissingWidth 500
+/CharSet(/one/slash/three/two)/FontFile3 41 0 R>>
+endobj
+41 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 701>>stream
+Gar8S?t!MPA7Xcq8BiSV/]g[]e9/p[8HB-3rK(Xh+iEq>QFXWga,HW.XKi6uF'e?Zo.YC[YUo[V
+:?[&:i:f;3mhGm4b`%Jq?.5A9$S%&idkaT11dZi3279i7&0cjpQBhkLPqX'ZQdk$=oK3:7+JUJF
+-bgc_26Xr%_&914-RU]Q+[)a/+JW$^0dS,'"f*_$0deh__(@GjZ_/GU9L6R!;o-Pj^ebh<R/1CV
+-C#>s"=N=H/,1NC>`U)G^qda[DeN\*^`^E8`$!8H_S?NN0`qf91kRBt$qA>\*IQaGe]qh*T(4[4
+oQSa@*7f1IhiiNOYk%`Pcj^\,qQ@X3^$/%hkb$St$9od.fLsJ[&q9FpF6Kl]<.#M[;>HcBERT-r
+n$,-C5GifE'`EH1D=5Dto06U^cMr"b_=#nphdppPs47+MDJJ`HX0oRMVa9a_e0;>*)g7f:\M:q>
+[OC=J_/Eqrh`R3=4tXOg3I[3t!KA`-cLYQ"G?1F+?b\,hk5;A)/puW)me;X6Hb-+s/T0BE[kapE
+SAR9LcHe:pj-=euh_K"2^Qi+BI95gupoaSXa`k:Bkm+=LaU:<m]4KZU1K*,@N3E2G[;sS(:R92M
+W/L*;iMcc/`nn&,Dr.;#1KLWL\##SSnES3tQ_\^2q0Fs5P!qSnbl;QB5C*prG:p&eMVR+"VXX)&
+=.IFNbJ4)X6a#JB~>
+endstream
+endobj
+43 0 obj
+<</Type/Metadata
+/Subtype/XML/Length 1422>>stream
+<?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>
+<?adobe-xap-filters esc="CRLF"?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+<rdf:Description rdf:about='uuid:c077e0ec-7cc5-11f1-0000-d4817e990841' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 9.07'/>
+<rdf:Description rdf:about='uuid:c077e0ec-7cc5-11f1-0000-d4817e990841' xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2016-07-07T18:13:39-07:00</xmp:ModifyDate>
+<xmp:CreateDate>2016-07-07T18:13:39-07:00</xmp:CreateDate>
+<xmp:CreatorTool>GNU Enscript 1.6.6</xmp:CreatorTool></rdf:Description>
+<rdf:Description rdf:about='uuid:c077e0ec-7cc5-11f1-0000-d4817e990841' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:c077e0ec-7cc5-11f1-0000-d4817e990841'/>
+<rdf:Description rdf:about='uuid:c077e0ec-7cc5-11f1-0000-d4817e990841' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>childwait.ps</rdf:li></rdf:Alt></dc:title><dc:creator><rdf:Seq><rdf:li>Wesley Mackey</rdf:li></rdf:Seq></dc:creator></rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+                                                                        
+                                                                        
+<?xpacket end='w'?>
+endstream
+endobj
+2 0 obj
+<</Producer(GPL Ghostscript 9.07)
+/CreationDate(D:20160707181339-07'00')
+/ModDate(D:20160707181339-07'00')
+/Title(childwait.ps)
+/Author(Wesley Mackey)
+/Creator(GNU Enscript 1.6.6)>>endobj
+xref
+0 44
+0000000000 65535 f 
+0000014456 00000 n 
+0000034824 00000 n 
+0000014369 00000 n 
+0000013606 00000 n 
+0000000009 00000 n 
+0000002707 00000 n 
+0000014521 00000 n 
+0000015612 00000 n 
+0000026150 00000 n 
+0000016188 00000 n 
+0000032284 00000 n 
+0000015809 00000 n 
+0000027939 00000 n 
+0000015027 00000 n 
+0000016365 00000 n 
+0000014562 00000 n 
+0000014592 00000 n 
+0000013757 00000 n 
+0000002727 00000 n 
+0000005153 00000 n 
+0000014655 00000 n 
+0000014685 00000 n 
+0000013910 00000 n 
+0000005174 00000 n 
+0000008513 00000 n 
+0000014748 00000 n 
+0000014778 00000 n 
+0000014063 00000 n 
+0000008534 00000 n 
+0000009596 00000 n 
+0000014841 00000 n 
+0000014871 00000 n 
+0000014216 00000 n 
+0000009617 00000 n 
+0000013585 00000 n 
+0000014934 00000 n 
+0000014964 00000 n 
+0000016975 00000 n 
+0000026419 00000 n 
+0000028252 00000 n 
+0000032523 00000 n 
+0000015520 00000 n 
+0000033325 00000 n 
+trailer
+<< /Size 44 /Root 1 0 R /Info 2 0 R
+/ID [<71E6CF5519C6C2E7AD268045DDCB22A9><71E6CF5519C6C2E7AD268045DDCB22A9>]
+>>
+startxref
+35020
+%%EOF

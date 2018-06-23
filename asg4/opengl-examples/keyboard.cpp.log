@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting keyboard.cpp
+keyboard.cpp:
+     $Id: keyboard.cpp,v 1.14 2016-07-20 20:26:13-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 keyboard.cpp
+	-o keyboard -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f keyboard.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished keyboard.cpp

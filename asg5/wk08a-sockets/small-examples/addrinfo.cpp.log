@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting addrinfo.cpp
+addrinfo.cpp:
+     $Id: addrinfo.cpp,v 1.12 2014-05-22 14:35:13-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 addrinfo.cpp
+	-o addrinfo -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f addrinfo.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished addrinfo.cpp

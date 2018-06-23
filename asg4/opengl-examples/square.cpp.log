@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting square.cpp
+square.cpp:
+     $Id: square.cpp,v 1.12 2016-07-20 20:27:43-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 square.cpp
+	-o square -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f square.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished square.cpp

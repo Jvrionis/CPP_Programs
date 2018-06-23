@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting menus.cpp
+menus.cpp:
+     $Id: menus.cpp,v 1.4 2014-05-09 16:54:10-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 menus.cpp
+	-o menus -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f menus.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished menus.cpp

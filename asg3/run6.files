@@ -1,0 +1,38 @@
+test1.in: 1: a=b
+a = b
+test1.in: 2: key=value
+key = value
+test1.in: 3: this=is a test
+this = is a test
+test1.in: 4: this
+this: key not found.
+test1.in: 5: key
+key: key not found.
+test1.in: 6: a
+a: key not found.
+test1.in: 7: # $Id: test1.in,v 1.1 2016-06-28 14:48:38-07 - - $
+test2.in: 8: key=value
+key = value
+test2.in: 9: second=third
+second = third
+test2.in: 10: foo=bar
+foo = bar
+test2.in: 11: f1=51
+f1 = 51
+test2.in: 12: f2=52
+f2 = 52
+test2.in: 13: foobar=baz
+foobar = baz
+test2.in: 14: baz=quux
+baz = quux
+test2.in: 15: this=is=a=test
+this = is=a=test
+test2.in: 16: =
+test2.in: 17: a=value
+a = value
+test2.in: 18: b=value
+b = value
+test2.in: 19: =value
+test2.in: 20: # $Id: test2.in,v 1.1 2016-06-28 14:48:38-07 - - $
+Before insert: {test1.in,1}
+Before insert: {test2.in,2}

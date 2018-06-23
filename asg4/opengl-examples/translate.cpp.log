@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting translate.cpp
+translate.cpp:
+     $Id: translate.cpp,v 1.36 2016-07-20 20:00:01-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 translate.cpp
+	-o translate -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f translate.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished translate.cpp

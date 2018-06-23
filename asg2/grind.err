@@ -1,0 +1,96 @@
+==3875== Memcheck, a memory error detector
+==3875== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3875== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info
+==3875== Command: ./yshell
+==3875== 
+--3875-- Valgrind options:
+--3875--    --leak-check=full
+--3875--    -v
+--3875-- Contents of /proc/version:
+--3875--   Linux version 3.10.0-693.11.6.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-16) (GCC) ) #1 SMP Thu Jan 4 01:06:37 UTC 2018
+--3875-- 
+--3875-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-avx
+--3875-- Page sizes: currently 4096, max supported 4096
+--3875-- Valgrind library directory: /opt/rh/devtoolset-6/root/usr/lib64/valgrind
+--3875-- Reading syms from /afs/cats.ucsc.edu/users/k/jvrionis/cmps109/assignments/asg2/yshell
+--3875-- Reading syms from /usr/lib64/ld-2.17.so
+--3875--   Considering /usr/lib/debug/.build-id/22/fa66da7d14c88bf36c69454a357e5f1defae4e.debug ..
+--3875--   .. build-id is valid
+--3875-- Reading syms from /opt/rh/devtoolset-6/root/usr/lib64/valgrind/memcheck-amd64-linux
+--3875--    object doesn't have a symbol table
+--3875--    object doesn't have a dynamic symbol table
+--3875-- Scheduler: using generic scheduler lock implementation.
+--3875-- Reading suppressions file: /opt/rh/devtoolset-6/root/usr/lib64/valgrind/default.supp
+==3875== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-3875-by-jvrionis-on-unix1.lt.ucsc.edu
+==3875== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-3875-by-jvrionis-on-unix1.lt.ucsc.edu
+==3875== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-3875-by-jvrionis-on-unix1.lt.ucsc.edu
+==3875== 
+==3875== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==3875== don't want to do, unless you know exactly what you're doing,
+==3875== or are doing some strange experiment):
+==3875==   /opt/rh/devtoolset-6/root/usr/lib64/valgrind/../../bin/vgdb --pid=3875 ...command...
+==3875== 
+==3875== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==3875==   /path/to/gdb ./yshell
+==3875== and then give GDB the following command
+==3875==   target remote | /opt/rh/devtoolset-6/root/usr/lib64/valgrind/../../bin/vgdb --pid=3875
+==3875== --pid is optional if only one valgrind process is running
+==3875== 
+--3875-- REDIR: 0x40192f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x38058cd1 (???)
+--3875-- REDIR: 0x40190c0 (ld-linux-x86-64.so.2:index) redirected to 0x38058ceb (???)
+--3875-- Reading syms from /opt/rh/devtoolset-6/root/usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--3875-- Reading syms from /opt/rh/devtoolset-6/root/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+==3875== WARNING: new redirection conflicts with existing -- ignoring it
+--3875--     old: 0x040192f0 (strlen              ) R-> (0000.0) 0x38058cd1 ???
+--3875--     new: 0x040192f0 (strlen              ) R-> (2007.0) 0x04c2ca30 strlen
+--3875-- REDIR: 0x4019270 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2db80 (strcmp)
+--3875-- REDIR: 0x4019e60 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c30c00 (mempcpy)
+--3875-- Reading syms from /usr/lib64/libstdc++.so.6.0.19
+--3875--   Considering /usr/lib/debug/.build-id/ec/d3167b42e7d9035fe94a5276cf1d21dd00a462.debug ..
+--3875--   .. build-id is valid
+--3875-- Reading syms from /usr/lib64/libm-2.17.so
+--3875--   Considering /usr/lib/debug/.build-id/80/8bd35686c193f218a5aaac6194c49214cff379.debug ..
+--3875--   .. build-id is valid
+--3875-- Reading syms from /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+--3875--   Considering /usr/lib/debug/.build-id/3e/85e6d20d2ce9cdad535084bea56620baad687c.debug ..
+--3875--   .. build-id is valid
+--3875-- Reading syms from /usr/lib64/libc-2.17.so
+--3875--   Considering /usr/lib/debug/.build-id/95/ff02a4bebabc573c7827a66d447f7babddaa44.debug ..
+--3875--   .. build-id is valid
+--3875-- REDIR: 0x56def80 (libc.so.6:strcasecmp) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x56dbd00 (libc.so.6:strnlen) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x56e1250 (libc.so.6:strncasecmp) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x56de760 (libc.so.6:memset) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x56de710 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x56dd6f0 (libc.so.6:__GI_strrchr) redirected to 0x4c2c3f0 (__GI_strrchr)
+--3875-- REDIR: 0x56dbc20 (libc.so.6:__GI_strlen) redirected to 0x4c2c990 (__GI_strlen)
+--3875-- REDIR: 0x56de180 (libc.so.6:__GI_memcmp) redirected to 0x4c2f470 (__GI_memcmp)
+--3875-- REDIR: 0x56da180 (libc.so.6:strcmp) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x578a020 (libc.so.6:__strcmp_sse42) redirected to 0x4c2db30 (__strcmp_sse42)
+--3875-- REDIR: 0x56dbbd0 (libc.so.6:strlen) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x57ba910 (libc.so.6:__strlen_sse2_pminub) redirected to 0x4c2c970 (strlen)
+--3875-- REDIR: 0x4e941a0 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c2a11c (operator new(unsigned long))
+--3875-- REDIR: 0x56e3920 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x579fcd0 (libc.so.6:__memcpy_ssse3_back) redirected to 0x4c2df40 (memcpy@@GLIBC_2.14)
+--3875-- REDIR: 0x56de7c0 (libc.so.6:__GI_memset) redirected to 0x4c2fe20 (memset)
+--3875-- REDIR: 0x4e92310 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c2b0a6 (operator delete(void*))
+--3875-- REDIR: 0x56de930 (libc.so.6:__GI_mempcpy) redirected to 0x4c30930 (__GI_mempcpy)
+--3875-- REDIR: 0x56de140 (libc.so.6:bcmp) redirected to 0x4a24740 (_vgnU_ifunc_wrapper)
+--3875-- REDIR: 0x57b5240 (libc.so.6:__memcmp_sse4_1) redirected to 0x4c2f5b0 (__memcmp_sse4_1)
+--3875-- REDIR: 0x56dddf0 (libc.so.6:memchr) redirected to 0x4c2dc20 (memchr)
+--3875-- REDIR: 0x56d50c0 (libc.so.6:malloc) redirected to 0x4c29afc (malloc)
+yshell: Bad: no such function
+--3875-- REDIR: 0x56d54c0 (libc.so.6:free) redirected to 0x4c2abf6 (free)
+--3875-- REDIR: 0x56e3990 (libc.so.6:__GI_memcpy) redirected to 0x4c2e520 (__GI_memcpy)
+--3875-- REDIR: 0x56dbe20 (libc.so.6:__GI_strncmp) redirected to 0x4c2d1c0 (__GI_strncmp)
+--3875-- REDIR: 0x56dee20 (libc.so.6:__GI_stpcpy) redirected to 0x4c2f870 (__GI_stpcpy)
+--3875-- REDIR: 0x56e5210 (libc.so.6:strchrnul) redirected to 0x4c30720 (strchrnul)
+==3875== 
+==3875== HEAP SUMMARY:
+==3875==     in use at exit: 0 bytes in 0 blocks
+==3875==   total heap usage: 228 allocs, 228 frees, 8,204 bytes allocated
+==3875== 
+==3875== All heap blocks were freed -- no leaks are possible
+==3875== 
+==3875== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==3875== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

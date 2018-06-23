@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting showtext.cpp
+showtext.cpp:
+     $Id: showtext.cpp,v 1.29 2015-02-19 19:39:51-08 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 showtext.cpp
+	-o showtext -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f showtext.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished showtext.cpp

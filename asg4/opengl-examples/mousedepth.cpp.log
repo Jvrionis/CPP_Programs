@@ -1,0 +1,6 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting mousedepth.cpp
+mousedepth.cpp: $Id: mousedepth.cpp,v 1.26 2016-07-21 15:17:04-07 - - $
+g++ -g -O0 -Wall -Wextra -Wold-style-cast -rdynamic -std=gnu++14 mousedepth.cpp
+	-o mousedepth -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f mousedepth.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished mousedepth.cpp

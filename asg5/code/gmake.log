@@ -1,0 +1,41 @@
+Makefile:60: Makefile.dep: No such file or directory
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -MM sockets.cpp protocol.cpp  cix.cpp cixd.cpp >Makefile.dep
+checksource cix.cpp
+cpplint.py.perl cix.cpp
+Done processing cix.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c cix.cpp
+checksource sockets.cpp
+cpplint.py.perl sockets.cpp
+Done processing sockets.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c sockets.cpp
+checksource protocol.cpp
+cpplint.py.perl protocol.cpp
+Done processing protocol.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c protocol.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -o cix cix.o sockets.o protocol.o
+checksource cixd.cpp
+cpplint.py.perl cixd.cpp
+Done processing cixd.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c cixd.cpp
+cixd.cpp: In function ‘void reply_rm(accepted_socket&, cix_header&)’:
+cixd.cpp:52:32: warning: unused parameter ‘client_sock’ [-Wunused-parameter]
+ void reply_rm(accepted_socket& client_sock, cix_header& header){
+                                ^~~~~~~~~~~
+cixd.cpp:52:57: warning: unused parameter ‘header’ [-Wunused-parameter]
+ void reply_rm(accepted_socket& client_sock, cix_header& header){
+                                                         ^~~~~~
+cixd.cpp: In function ‘void reply_put(accepted_socket&, cix_header&)’:
+cixd.cpp:56:33: warning: unused parameter ‘client_sock’ [-Wunused-parameter]
+ void reply_put(accepted_socket& client_sock, cix_header& header){
+                                 ^~~~~~~~~~~
+cixd.cpp:56:58: warning: unused parameter ‘header’ [-Wunused-parameter]
+ void reply_put(accepted_socket& client_sock, cix_header& header){
+                                                          ^~~~~~
+cixd.cpp: In function ‘void reply_get(accepted_socket&, cix_header&)’:
+cixd.cpp:60:33: warning: unused parameter ‘client_sock’ [-Wunused-parameter]
+ void reply_get(accepted_socket& client_sock, cix_header& header){
+                                 ^~~~~~~~~~~
+cixd.cpp:60:58: warning: unused parameter ‘header’ [-Wunused-parameter]
+ void reply_get(accepted_socket& client_sock, cix_header& header){
+                                                          ^~~~~~
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -o cixd cixd.o sockets.o protocol.o

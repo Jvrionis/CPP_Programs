@@ -1,0 +1,8 @@
+#!/bin/sh
+# $Id: conv,v 1.2 2016-07-20 14:13:52-07 - - $
+for xwd in $*
+do
+   convert $xwd $xwd.pdf
+   pdftops -paper letter $xwd.pdf $xwd.ps
+   gv $xwd.ps
+done

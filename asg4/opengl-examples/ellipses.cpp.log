@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting ellipses.cpp
+ellipses.cpp:
+     $Id: ellipses.cpp,v 1.10 2016-07-20 13:50:04-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 ellipses.cpp
+	-o ellipses -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f ellipses.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished ellipses.cpp

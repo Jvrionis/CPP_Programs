@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting circles.cpp
+circles.cpp:
+     $Id: circles.cpp,v 1.45 2016-07-20 13:50:04-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 circles.cpp
+	-o circles -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f circles.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished circles.cpp

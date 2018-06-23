@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting hello-gl.cpp
+hello-gl.cpp:
+     $Id: hello-gl.cpp,v 1.31 2016-07-20 20:36:26-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 hello-gl.cpp
+	-o hello-gl -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f hello-gl.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished hello-gl.cpp

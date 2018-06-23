@@ -1,0 +1,8 @@
+partnercheck: ./PARTNER: format OK:
+username = mbrain
+passwd   = *
+uid      = 221802
+gid      = 100
+gecos    = Maximillian Von Brain
+home     = /afs/cats.ucsc.edu/users/p/mbrain
+shell    = /bin/bash

@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting glclock.cpp
+glclock.cpp:
+     $Id: glclock.cpp,v 1.19 2016-07-20 20:07:11-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 glclock.cpp
+	-o glclock -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f glclock.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished glclock.cpp

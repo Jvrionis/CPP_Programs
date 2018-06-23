@@ -1,0 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting coordinates.cpp
+coordinates.cpp:
+     $Id: coordinates.cpp,v 1.37 2016-07-20 20:33:42-07 - - $
+g++ -g -O0 -Wall -Wextra -rdynamic -std=gnu++14 coordinates.cpp
+	-o coordinates -lglut -lGLU -lGL -lX11 -lrt -lm
+rm -f coordinates.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished coordinates.cpp

@@ -1,0 +1,34 @@
+Makefile:73: Makefile.dep: No such file or directory
+gmake --no-print-directory dep
+mk-colors.perl >colors.cppgen
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -MM graphics.cpp interp.cpp rgbcolor.cpp shape.cpp debug.cpp util.cpp main.cpp >>Makefile.dep
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c graphics.cpp
+checksource graphics.cpp
+cpplint.py.perl graphics.cpp
+Done processing graphics.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c interp.cpp
+checksource interp.cpp
+cpplint.py.perl interp.cpp
+Done processing interp.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c rgbcolor.cpp
+checksource rgbcolor.cpp
+cpplint.py.perl rgbcolor.cpp
+Done processing rgbcolor.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c shape.cpp
+checksource shape.cpp
+cpplint.py.perl shape.cpp
+Done processing shape.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c debug.cpp
+checksource debug.cpp
+cpplint.py.perl debug.cpp
+Done processing debug.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c util.cpp
+checksource util.cpp
+cpplint.py.perl util.cpp
+Done processing util.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -c main.cpp
+checksource main.cpp
+cpplint.py.perl main.cpp
+Done processing main.cpp
+g++ -std=gnu++17 -g -O0 -Wall -Wextra -Wold-style-cast -o gdraw graphics.o interp.o rgbcolor.o shape.o debug.o util.o main.o -lGL -lGLU -lglut -lm
+checksource graphics.h graphics.cpp interp.h interp.cpp rgbcolor.h rgbcolor.cpp shape.h shape.cpp debug.h debug.cpp util.h util.tcc util.cpp main.cpp Makefile Makefile.dep mk-colors.perl

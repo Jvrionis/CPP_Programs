@@ -1,0 +1,5 @@
+# Makefile.dep created Tue Feb 20 22:39:13 PST 2018
+trace.o: trace.cpp trace.h
+util.o: util.cpp util.h trace.h util.tcc
+main.o: main.cpp listmap.h xless.h xpair.h listmap.tcc trace.h util.h \
+ util.tcc

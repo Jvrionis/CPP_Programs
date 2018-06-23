@@ -1,0 +1,7 @@
+Makefile:61: Makefile.dep: No such file or directory
+gmake --no-print-directory dep
+g++ -std=gnu++14 -MM trace.cpp util.cpp main.cpp >>Makefile.dep
+g++ -std=gnu++14 -g -O0 -Wall -Wextra -Wold-style-cast -c trace.cpp
+g++ -std=gnu++14 -g -O0 -Wall -Wextra -Wold-style-cast -c util.cpp
+g++ -std=gnu++14 -g -O0 -Wall -Wextra -Wold-style-cast -c main.cpp
+g++ -std=gnu++14 -g -O0 -Wall -Wextra -Wold-style-cast -o keyvalue trace.o util.o main.o
